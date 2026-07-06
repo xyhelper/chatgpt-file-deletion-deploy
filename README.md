@@ -41,6 +41,7 @@ cd chatgpt-file-deletion
 ## 配置docker-compose环境变量
 - GPTPROXY=chatgpt接入点地址
 - WEBHOOKURL=企业微信机器人webhook地址（如果不用企业微信通知可不配置）
+- CONCURRENCY=账号并发数量 
 
 ## 使用方法
 
