@@ -8,6 +8,7 @@ services:
       - TZ=Asia/Shanghai
       - GPTPROXY=         # chatgpt接入点
       - WEBHOOKURL=       # 企业微信机器人webhook地址（如果不用企业微信通知可不配置）
+      - CONCURRENCY=1     # 账号并发数，默认1
     restart: unless-stopped
     
   redis:
