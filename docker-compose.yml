@@ -6,9 +6,11 @@ services:
       - "9900:8001"
     environment:
       - TZ=Asia/Shanghai
-      - GPTPROXY=         # chatgpt接入点
-      - WEBHOOKURL=       # 企业微信机器人webhook地址（如果不用企业微信通知可不配置）
-      - CONCURRENCY=1     # 账号并发数，默认1
+      - GPTPROXY=              # chatgpt接入点
+      - WEBHOOKURL=            # 企业微信机器人webhook地址（如果不用企业微信通知可不配置）
+      - CONCURRENCY=1          # 账号并发数，默认1
+      - CLEAN_MINTUNES=24*60   # 保留文件的最长时间（单位：分钟）。超过该时长的文件会被清理；默认 24*60（24 小时）
+      - CLEAN_PROPORTION=0.5   # 当存储使用率超过该阈值时，按此比例触发清理；默认 0.5（50%），填写小于 1 的小数
     restart: unless-stopped
     
   redis:
